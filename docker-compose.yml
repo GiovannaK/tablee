@@ -14,7 +14,7 @@ services:
       - ./pgdata:/var/lib/postgresql/data
   web:
     build:
-      dockerfile: Dockerfile
+      target: development
       context: .
     ports:
       - ${PORT}:4000
