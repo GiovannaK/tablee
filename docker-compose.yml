@@ -14,11 +14,11 @@ services:
       - ./pgdata:/var/lib/postgresql/data
   web:
     build:
-      target: development
+      dockerfile: Dockerfile
       context: .
     ports:
       - ${PORT}:4000
-    command: ${START_COMMAND}
+    command: npm run start:dev
     volumes:
       - .:/usr/src/app
     environment:
